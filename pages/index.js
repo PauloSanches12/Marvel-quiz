@@ -5,13 +5,7 @@ import Footer from './src/components/Footer'
 import GitHubCorner from './src/components/GitHubCorner'
 import QuizBackground from './src/components/QuizBackground'
 import QuizLogo from './src/components/QuizLogo'
-
-// const BackgroundImage = styled.div`
-//   background-image: url(${db.bg});
-//   flex: 1;
-//   background-size: cover;
-//   background-position: center;
-//  `;
+import Head from 'next/head'
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -24,18 +18,20 @@ export const QuizContainer = styled.div`
 }
 `;
 
-
-
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>Marvel Quiz</title>
+        <meta property="og:image" key="title" content={db.bg}/>
+      </Head>
       <QuizContainer>
         <Widget>
           <Widget.Header>
               <h1>Os Vingadores</h1>
             </Widget.Header>
           <Widget.Content>
-            <p>Thor Vingador mais forte.</p>
+            <p>Thor, vingador mais forte.</p>
           </Widget.Content>
         </Widget>
         <Widget>
@@ -43,7 +39,7 @@ export default function Home() {
               <h1>Os Vingadores</h1>
             </Widget.Header>
           <Widget.Content>
-            <p>Thor Vingador mais forte.</p>
+            <p>Thor, vingador mais forte.</p>
           </Widget.Content>
         </Widget>
         <Widget>
@@ -51,7 +47,7 @@ export default function Home() {
               <h1>Os Vingadores</h1>
             </Widget.Header>
           <Widget.Content>
-            <p>Thor Vingador mais forte.</p>
+            <p>Thor, vingador mais forte.</p>
           </Widget.Content>
         </Widget>
         <Footer />
